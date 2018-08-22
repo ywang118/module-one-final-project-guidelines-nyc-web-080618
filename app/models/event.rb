@@ -1,3 +1,8 @@
+### BIG CHANGES! 
+
+
+
+
 class Event < ActiveRecord::Base
   has_many :event_organizers
   has_many :organizers, through: :event_organizers
