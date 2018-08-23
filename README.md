@@ -10,4 +10,4 @@ Description:
 - Our application helps those who are interested in participating in meetups, either in the role of a user or an organizer. The application both retrieves data & allows certain fields to be edited.
 
 
-"Are you feeling lonely in NYC?!?! It's a big city and there are many things to do with many people! Our application connects you to people with similar interests!"
+#"Are you feeling lonely in NYC?!?! It's a big city and there are many things to do with many people! Our application connects you to people with similar interests!"
