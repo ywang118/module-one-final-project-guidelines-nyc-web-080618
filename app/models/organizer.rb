@@ -1,3 +1,4 @@
+require "pry"
 class Organizer < ActiveRecord::Base
   has_many :event_organizers
   has_many :events, through: :event_organizers
@@ -25,8 +26,13 @@ class Organizer < ActiveRecord::Base
     end
   end
 
-  def events_by_organizers
-    eventorganizer =EventOrganizer.where(organizer_id: self.id, is_organizer: true)
+  def events_by_organizer
+  #  eventorganizer =EventOrganizer.where(organizer_id: self.id, is_organizer: true)
+    Event.joins(:event_organizers).where(event_organizers: {organizer_id:self.id,is_organizer: true})
+  end
+  # add method for attendees 
+  def events_by_attendee
+    Event.joins(:event_organizers).where(event_organizers: {organizer_id:self.id,is_organizer: false})
   end
 
   def update_event_time(event_name,time_to_update) # for organizers
@@ -37,7 +43,16 @@ class Organizer < ActiveRecord::Base
       #binding.pry
       event_obj.time = time_to_update
       event_obj.save
+      # add alert#
+    else
+      "Sorry you are not the organizer for this event!"
     end
+  end
+
+  def self.most_expericed_organizer
+    organizer_arr = Organizer.joins(:event_organizers).where(event_organizers: {is_organizer:true})
+    organizer_hash = organizer_arr.group(:full_name).count
+    organizer_hash.sort_by {|_key, value| value}.reverse.to_h
   end
 
 

@@ -79,9 +79,39 @@ end
   end
 
 puts "making eventorganizer"
-10.times do
-  EventOrganizer.create(event_id: event_id_arr.sample, organizer_id: organizer_id_arr.sample,
-    is_organizer: Faker::Boolean.boolean)
-  end
+
+    # 10.times do
+    #   EventOrganizer.create(event_id: event_id_arr.sample, organizer_id: organizer_id_arr.sample,
+    #     is_organizer: Faker::Boolean.boolean)
+    # end
+
+  EventOrganizer.create(event_id: event_id_arr[0],organizer_id:organizer_id_arr[0], is_organizer:true)
+  EventOrganizer.create(event_id: event_id_arr[0],organizer_id:organizer_id_arr[9], is_organizer:true)
+  EventOrganizer.create(event_id: event_id_arr[1],organizer_id:organizer_id_arr[0], is_organizer:true)
+  EventOrganizer.create(event_id: event_id_arr[2],organizer_id:organizer_id_arr[0], is_organizer:true)
+  EventOrganizer.create(event_id: event_id_arr[3],organizer_id:organizer_id_arr[6], is_organizer:true)
+  EventOrganizer.create(event_id: event_id_arr[4],organizer_id:organizer_id_arr[1], is_organizer:true)
+  EventOrganizer.create(event_id: event_id_arr[5],organizer_id:organizer_id_arr[4], is_organizer:true)
+  EventOrganizer.create(event_id: event_id_arr[6],organizer_id:organizer_id_arr[2], is_organizer:true)
+  EventOrganizer.create(event_id: event_id_arr[7],organizer_id:organizer_id_arr[2], is_organizer:true)
+  EventOrganizer.create(event_id: event_id_arr[8],organizer_id:organizer_id_arr[0], is_organizer:true)
+  EventOrganizer.create(event_id: event_id_arr[9],organizer_id:organizer_id_arr[1], is_organizer:true)
+
+  EventOrganizer.create(event_id: event_id_arr[0],organizer_id:organizer_id_arr[2], is_organizer:false)
+  EventOrganizer.create(event_id: event_id_arr[0],organizer_id:organizer_id_arr[3], is_organizer:false)
+  EventOrganizer.create(event_id: event_id_arr[0],organizer_id:organizer_id_arr[4], is_organizer:false)
+  EventOrganizer.create(event_id: event_id_arr[0],organizer_id:organizer_id_arr[5], is_organizer:false)
+  EventOrganizer.create(event_id: event_id_arr[0],organizer_id:organizer_id_arr[7], is_organizer:false)
+  EventOrganizer.create(event_id: event_id_arr[1],organizer_id:organizer_id_arr[6], is_organizer:false)
+  EventOrganizer.create(event_id: event_id_arr[2],organizer_id:organizer_id_arr[4], is_organizer:false)
+  EventOrganizer.create(event_id: event_id_arr[3],organizer_id:organizer_id_arr[8], is_organizer:false)
+  EventOrganizer.create(event_id: event_id_arr[4],organizer_id:organizer_id_arr[7], is_organizer:false)
+  EventOrganizer.create(event_id: event_id_arr[4],organizer_id:organizer_id_arr[3], is_organizer:false)
+  EventOrganizer.create(event_id: event_id_arr[5],organizer_id:organizer_id_arr[0], is_organizer:false)
+  EventOrganizer.create(event_id: event_id_arr[6],organizer_id:organizer_id_arr[3], is_organizer:false)
+  EventOrganizer.create(event_id: event_id_arr[6],organizer_id:organizer_id_arr[5], is_organizer:false)
+  EventOrganizer.create(event_id: event_id_arr[6],organizer_id:organizer_id_arr[8], is_organizer:false)
+  EventOrganizer.create(event_id: event_id_arr[8],organizer_id:organizer_id_arr[1], is_organizer:false)
+  EventOrganizer.create(event_id: event_id_arr[8],organizer_id:organizer_id_arr[6], is_organizer:false)
 puts "done with eventorganizer"
 #create seed event organizer ie merging the two from above

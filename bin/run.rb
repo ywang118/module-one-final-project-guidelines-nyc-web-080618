@@ -9,19 +9,19 @@ require_relative '../config/environment'
 # EventOrganizer.create( event:yes, organizer:run,is_organizer: false)
 
 #
-# person1 = Organizer.create(full_name: "Michael Coleman",email_address: "mccoleman@gmail.com", phone_number:Faker::PhoneNumber.unique.cell_phone)
-# event1 = Event.create(name: "running", location_borough: "Williamsburg, Brooklyn", time: Faker::Time.forward(10))
+#  person1 = Organizer.new(full_name: "Michael Coleman",email_address: "mccoleman@gmail.com", phone_number:Faker::PhoneNumber.unique.cell_phone)
+# event1 = Event.new(name: "running", location_borough: "Williamsburg, Brooklyn", time: Faker::Time.forward(10))
 # event_organizer1 = EventOrganizer.create(event_id: event1.id, organizer_id: person1.id, is_organizer: true)
 
-puts "hello! Welcome to our meetup application. Please note the following commands:"
-puts "type ALL to you can see all events"
-response = gets.chomp
-#binding.pry
-if response == "ALL"
-  puts Event.all.pluck()
-end
+# puts "hello! Welcome to our meetup application. Please note the following commands:"
+# puts "type ALL to you can see all events"
+# response = gets.chomp
+# #binding.pry
+# if response == "ALL"
+#   puts Event.all.pluck()
+# end
 
-
+binding.pry
 
 
 
