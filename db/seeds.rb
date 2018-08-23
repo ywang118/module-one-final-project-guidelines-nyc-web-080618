@@ -35,16 +35,15 @@ neighborhood_and_borough_hash = []
      neighborhood_and_borough_hash.push("#{response_hash[i][-2]}, #{response_hash[i][-6]}")
      i += 1
    end
+
+
+
 puts "creating events"
     i = 0
     10.times do
-
-    
       Event.create(name: event_array[i], description: "#{event_array[i]} with friends and some people you don't know!", location_borough: neighborhood_and_borough_hash[i], time: Faker::Time.forward(10),cost: 1+rand(100))
       i += 1
     end
-
-
 puts "done with events"
 
 # create seed organizer

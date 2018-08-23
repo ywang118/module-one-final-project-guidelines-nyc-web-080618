@@ -65,13 +65,15 @@ def running_file(entered_response)
     puts ""
     puts "Please find a list of those who have led events below:"
     puts "Name:  Email Address:"
-    organizer_arr = Organizer.people_who_led_events.pluck(:full_name, :email_address)
-    organizer_arr.each do |key, value|
-      puts "#{key}:  #{value}"
+    outer_array = Organizer.people_who_led_events.pluck(:full_name, :email_address)
+    outer_array.each do |organizer_arr|
+
+
+        puts "#{organizer_arr[0]}:  #{organizer_arr[1]}"
+
+    end
     print_rerun_option
     collect_and_run_rerun_option
-    end
-
 
   elsif entered_response == '3'
     location = Event.all.pluck(:location_borough).uniq
