@@ -29,6 +29,12 @@ class Organizer < ActiveRecord::Base
     eventorganizer =EventOrganizer.where(organizer_id: self.id, is_organizer: true)
   end
 
+  def self.people_who_led_events
+    people_array = []
+    led_event_ids = EventOrganizer.where("is_organizer" => true)
+    people_array = Organizer.where(id:led_event_ids).uniq
+  end
+
   def update_event_time(event_name,time_to_update) # for organizers
     event_obj = Event.where(name: event_name).last
     event = Event.where(name: event_name).last.id

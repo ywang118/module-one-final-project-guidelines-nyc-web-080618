@@ -1,8 +1,3 @@
-### BIG CHANGES! 
-
-
-
-
 class Event < ActiveRecord::Base
   has_many :event_organizers
   has_many :organizers, through: :event_organizers
@@ -14,12 +9,10 @@ class Event < ActiveRecord::Base
   end
 
   #
-  # def self.people_who_led_events
-  #   leaders_hash = {}
-  #   event_array = Event.joins(:event_organizers).where(event_organizers: {is_organizer:true})
-  #   binding.pry
-  #   #event_array.each do |event|
-  # end
+  def self.people_who_led_events
+    event_array = Organizer.joins(:event_organizer)
+    binding.pry
+  end
   def self.find_event_by_description(entered_description)
     event_array = Event.all.where(location_borough: entered_description)
   end
