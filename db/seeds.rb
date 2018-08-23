@@ -102,6 +102,7 @@ puts "making eventorganizer"
   EventOrganizer.create(event_id: event_id_arr[0],organizer_id:organizer_id_arr[4], is_organizer:false)
   EventOrganizer.create(event_id: event_id_arr[0],organizer_id:organizer_id_arr[5], is_organizer:false)
   EventOrganizer.create(event_id: event_id_arr[0],organizer_id:organizer_id_arr[7], is_organizer:false)
+  EventOrganizer.create(event_id: event_id_arr[0],organizer_id:organizer_id_arr[9], is_organizer:false)
   EventOrganizer.create(event_id: event_id_arr[1],organizer_id:organizer_id_arr[6], is_organizer:false)
   EventOrganizer.create(event_id: event_id_arr[2],organizer_id:organizer_id_arr[4], is_organizer:false)
   EventOrganizer.create(event_id: event_id_arr[3],organizer_id:organizer_id_arr[8], is_organizer:false)

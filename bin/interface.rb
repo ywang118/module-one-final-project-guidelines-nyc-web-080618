@@ -13,6 +13,9 @@ def welcome_message
   puts "Welcome to our lovely application!"
 end
 
+
+
+
 def functionality_list
   puts ""
   puts "Please find a list of the available features here:"
@@ -45,11 +48,13 @@ def running_file(entered_response)
   elsif entered_response == '2'
     puts "you put 2"
     organizer_arr = Organizer.people_who_led_events.pluck(:full_name, :email_address)
-    organizer_arr.each do |key, value|
-      puts "#{key}:  #{value}"
+
+    organizer_arr.each do |arr|
+      puts "arr[0]:  arr[1]"
     print_rerun_option
     collect_and_run_rerun_option
-    end
+
+  end
 
   elsif entered_response == '3'
     display_array = ["Name: ", "Description: ", "Location: ", "Time: ", "Cost: $"]
@@ -189,6 +194,11 @@ end
 
 
 def email_helper_function
+
+  # prompt = TTY::Prompt.new
+  # prompt.ask('Please enter a valid email address: ') do |q|
+  #   q.validate(/\A\w+@\w+\.\w+\Z/, 'Invalid email address')
+
   puts "Please enter a valid email address: "
   email = gets.chomp
   person = Organizer.email(email).first
