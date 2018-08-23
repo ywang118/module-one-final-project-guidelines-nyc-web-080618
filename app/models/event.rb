@@ -9,11 +9,11 @@ class Event < ActiveRecord::Base
   end
 
   #
-  def self.people_who_led_events
-    event_array = Organizer.joins(:event_organizer)
-    binding.pry
+  def people_who_led_event
+    Organizer.joins(:event_organizers).where(event_organizers: {event_id:self.id,is_organizer:true})
+
   end
-  def self.find_event_by_description(entered_description)
+  def self.find_event_by_location(entered_description)
     event_array = Event.all.where(location_borough: entered_description)
   end
 

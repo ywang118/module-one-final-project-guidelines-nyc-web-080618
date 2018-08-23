@@ -5,7 +5,7 @@ class Organizer < ActiveRecord::Base
 
 
   def self.email(email)
-    Organizer.find_by(email_address: email)
+    Organizer.where(email_address: email)
   end
 
   def self.phone_info(phone)
@@ -17,20 +17,20 @@ class Organizer < ActiveRecord::Base
     last_name = self.full_name.split[-1]
     self.update(last_name: last_name)
   end
-  def cancle_event(event_name)  # for attendees
+  def cancel_event(event_name)  # for attendees
+    #binding.pry
     event = Event.find_by(name: event_name).id
     eventorganizer =EventOrganizer.where(organizer_id: self.id, event_id: event)
-    binding.pry
     if eventorganizer[0].is_organizer == false
-      eventorganizer.destroy
+      eventorganizer[0].destroy
     end
   end
 
-  def events_by_organizer
+  def events_by_particular_organizer
   #  eventorganizer =EventOrganizer.where(organizer_id: self.id, is_organizer: true)
     Event.joins(:event_organizers).where(event_organizers: {organizer_id:self.id,is_organizer: true})
   end
-  # add method for attendees 
+  # add method for attendees
   def events_by_attendee
     Event.joins(:event_organizers).where(event_organizers: {organizer_id:self.id,is_organizer: false})
   end
@@ -38,7 +38,7 @@ class Organizer < ActiveRecord::Base
   def self.people_who_led_events
     people_array = []
     led_event_ids = EventOrganizer.where("is_organizer" => true)
-    people_array = Organizer.where(id:led_event_ids).uniq
+    people_array = Organizer.where(id:led_event_ids).distinct
   end
 
   def update_event_time(event_name,time_to_update) # for organizers
@@ -49,10 +49,11 @@ class Organizer < ActiveRecord::Base
       #binding.pry
       event_obj.time = time_to_update
       event_obj.save
-      # add alert#
+      final_message = "Great, your event's time was updated!"
     else
-      "Sorry you are not the organizer for this event!"
+      final_message = "Sorry you are not the organizer for this event!"
     end
+    return final_message
   end
 
   def self.most_expericed_organizer
