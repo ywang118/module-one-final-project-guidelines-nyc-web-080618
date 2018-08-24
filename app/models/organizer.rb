@@ -16,7 +16,6 @@ class Organizer < ActiveRecord::Base
   end
   def cancel_event(event_name)  # for attendees
     event = Event.find_by(name: event_name).id
-    binding.pry
     eventorganizer =EventOrganizer.where(organizer_id: self.id, event_id: event)
 
     if eventorganizer[0].is_organizer == false
