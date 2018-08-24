@@ -26,7 +26,7 @@ def welcome_message
   puts ""
   puts ""
   puts "                                                 *** by Lila Wang & Michael Coleman ***                                                 ".colorize(:color => :white, :background => :black)
-  
+
 
 
 end
@@ -43,7 +43,7 @@ def functionality_list
   puts "\t 4.) Search for an event by the location of the event."
   puts "\t 5.) Find an organizer by their email address."
   puts "\t 6.) As an organizer, update an event's time"
-  puts "\t 7.) As an organizer, cancel an event you organized."
+  puts "\t 7.) As an attendees, cancel an event you organized."
   puts "\t 8.) View the most experienced organizers."
   puts "\t 9.) View events led by a particular organizer."
   puts ""
