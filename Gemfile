@@ -8,3 +8,4 @@ gem "require_all"
 gem "rake"
 gem "faker"
 gem 'rest-client'
+gem 'colorize'

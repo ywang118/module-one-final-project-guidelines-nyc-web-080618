@@ -2,6 +2,7 @@ require 'json'
 require 'pry'
 require 'faker'
 require 'rest-client'
+
 #create seed events
 
 # t.string :name
@@ -14,25 +15,36 @@ require 'rest-client'
 
 ####location_neighborhood_and_borough
 
-
+event_array = []
 neighborhood_and_borough_hash = []
    response_string = RestClient.get('https://data.cityofnewyork.us/api/views/swpk-hqdp/rows.json?accessType=DOWNLOAD')
    response_hash = JSON.parse(response_string)
    response_hash = response_hash["data"].shuffle
+   response_string = RestClient.get('https://data.cityofnewyork.us/resource/whq7-qjbv.json')
+   event = JSON.parse(response_string)
+
+
+   i = 0
+   100.times do
+     event_array.push(event[i]["name"])
+     i += 1
+   end
+   event_array = event_array.uniq
+
    i = 0
    10.times do
      neighborhood_and_borough_hash.push("#{response_hash[i][-2]}, #{response_hash[i][-6]}")
      i += 1
    end
+
+binding.pry
+
 puts "creating events"
     i = 0
     10.times do
-      event = Faker::Team.sport
-      Event.create(name: event, description: "#{event} with friends and some people you don't know!", location_borough: neighborhood_and_borough_hash[i], time: Faker::Time.forward(10),cost: 1+rand(100))
+      Event.create(name: event_array[i], description: "#{event_array[i]} with friends and some people you don't know!", location_borough: neighborhood_and_borough_hash[i], time: Faker::Time.forward(10),cost: 1+rand(100))
       i += 1
     end
-
-
 puts "done with events"
 
 # create seed organizer
