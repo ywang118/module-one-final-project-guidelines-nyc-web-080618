@@ -37,6 +37,7 @@ end
 def functionality_list
   puts ""
   puts "Please find a list of the available features here:".colorize(:blue)
+<<<<<<< HEAD
   puts "\t 1.) Find the most popular events." #
   puts "\t 2.) Find the email address of all people who have led events."#
   puts "\t 3.) Find the email address of all people who have attended events." #          ## event attendees
@@ -47,6 +48,18 @@ def functionality_list
   puts "\t 8.) As an attendees, cancel an event you organized."
   puts "\t 9.) View the most experienced organizers." #
   puts "\t 10.) View events led by a particular organizer." ##
+=======
+  puts "\t 1.) Find the most popular events."
+  puts "\t 2.) Find the email address of all people who have led events."
+  puts "\t 3.) Find the events attended by an attendee." ## event attendees
+  puts "\t 4.) See a list of neighborhoods with ongoing events."
+  puts "\t 5.) Search for an event by the location of the event."
+  puts "\t 6.) Find an organizer by their email address."
+  puts "\t 7.) As an organizer, update an event's time"
+  puts "\t 8.) As an attendees, cancel an event."
+  puts "\t 9.) View the most experienced organizers."
+  puts "\t 10.) View events led by a particular organizer."
+>>>>>>> f5a3f129463b9509a886f16db84340d1addce927
   puts ""
   puts "Please enter the number of the task you'd like to complete or 'exit' to close application."
 
