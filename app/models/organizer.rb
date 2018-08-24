@@ -34,6 +34,7 @@ class Organizer < ActiveRecord::Base
     led_event_ids = EventOrganizer.where("is_organizer" => true)
     people_array = Organizer.where(id:led_event_ids).distinct
   end
+
   def update_event_time(event_name,time_to_update) # for organizers
     event_obj = Event.where(name: event_name).last
     event = Event.where(name: event_name).last.id

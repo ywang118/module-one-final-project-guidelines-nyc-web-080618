@@ -39,13 +39,14 @@ def functionality_list
   puts "Please find a list of the available features here:".colorize(:blue)
   puts "\t 1.) Find the most popular events."
   puts "\t 2.) Find the email address of all people who have led events."
-  puts "\t 3.) See a list of neighborhoods with ongoing events."
-  puts "\t 4.) Search for an event by the location of the event."
-  puts "\t 5.) Find an organizer by their email address."
-  puts "\t 6.) As an organizer, update an event's time"
-  puts "\t 7.) As an attendees, cancel an event you organized."
-  puts "\t 8.) View the most experienced organizers."
-  puts "\t 9.) View events led by a particular organizer."
+  puts "\t 3.) Find the email address of all people who have led events." ## event attendees
+  puts "\t 4.) See a list of neighborhoods with ongoing events."
+  puts "\t 5.) Search for an event by the location of the event."
+  puts "\t 6.) Find an organizer by their email address."
+  puts "\t 7.) As an organizer, update an event's time"
+  puts "\t 8.) As an attendees, cancel an event you organized."
+  puts "\t 9.) View the most experienced organizers."
+  puts "\t 10.) View events led by a particular organizer."
   puts ""
   puts "Please enter the number of the task you'd like to complete or 'exit' to close application."
 
@@ -80,6 +81,14 @@ def running_file(entered_response)
     collect_and_run_rerun_option
 
   elsif entered_response == '3'
+
+    email = email_helper_function
+    variable = email.events_by_attendee.pluck()
+    puts variable
+    print_rerun_option
+    collect_and_run_rerun_option
+
+  elsif entered_response == '4'
     location = Event.all.pluck(:location_borough).uniq
     puts ""
     puts "Please find a list of locations with ongoing events below:"
@@ -87,7 +96,7 @@ def running_file(entered_response)
     print_rerun_option
     collect_and_run_rerun_option
 
-  elsif entered_response == '4'
+  elsif entered_response == '5'
     display_array = ["Name: ", "Description: ", "Location: ", "Time: ", "Cost: $"]
     puts ""
     puts "Please enter the location you'd like to see: "
@@ -121,7 +130,7 @@ def running_file(entered_response)
 
 
 
-  elsif entered_response == '5'
+  elsif entered_response == '6'
     puts ""
 
     email = email_helper_function.email_address
@@ -131,7 +140,7 @@ def running_file(entered_response)
     print_rerun_option
     collect_and_run_rerun_option
 
-  elsif entered_response == '6'
+  elsif entered_response == '7'
     puts ""
     email = email_helper_function.email_address
     person = Organizer.email(email).first
@@ -149,7 +158,7 @@ def running_file(entered_response)
     print_rerun_option
     collect_and_run_rerun_option
     #consider adding the possibility to do it again
-  elsif entered_response == '7'
+  elsif entered_response == '8'
     puts ""
 
     person = email_helper_function
@@ -161,7 +170,7 @@ def running_file(entered_response)
     print_rerun_option
     collect_and_run_rerun_option
 
-  elsif entered_response == '8'
+  elsif entered_response == '9'
     puts ""
     puts "Please find the most experienced Organizer"
     variable = Organizer.most_expericed_organizer
@@ -171,7 +180,7 @@ def running_file(entered_response)
     print_rerun_option
     collect_and_run_rerun_option
 
-  elsif entered_response == '9'
+  elsif entered_response == '10'
     description_array = ["Event Name: ", "Event Description: ", "Event Location: ", "Event Time: "]
     puts ""
     email = email_helper_function.email_address

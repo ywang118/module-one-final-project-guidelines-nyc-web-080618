@@ -11,3 +11,10 @@ Description:
 
 
 #"Are you feeling lonely in NYC?!?! It's a big city and there are many things to do with many people! Our application connects you to people with similar interests!"
+
+
+Presentation Outline:
+Deliverables: struggles, things we learned (3 different things), changes we'd like to add
+
+#struggles:
+THIS PRESENTATION, NEITHER OF US LIKE PUBLIC SPEAKING. 
