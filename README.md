@@ -37,6 +37,11 @@ Even as we built out our product we identified that there were things we'd like 
 
 Better design - were we to continue working on this in the future, we'd like for the app to have a nicer interface, ie the option to scroll between different features.
 
+<<<<<<< HEAD
 what we can improve in the future is  in our interface, instead of listing all the options together, we
 can categorize them into different groups. and only present few options for  user at a giventime, so that
 users are easy to navigate.
+=======
+
+![](ezgif.com-video-to-gif.gif)
+>>>>>>> c552c3fd579b0edc17a56d5a4f5b13b8c3436be2
