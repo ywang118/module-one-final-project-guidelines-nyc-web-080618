@@ -36,3 +36,6 @@ Using APIs - our application uses three different APIs, in addition to informati
 Even as we built out our product we identified that there were things we'd like to improve. The most readily apparent issue was how our users interacted with the different options we provide. Instead of simply having a list of 10 different options and requiring our users to select the one they were interested in using, we should have categorized our options to make the application more user friendly.
 
 Better design - were we to continue working on this in the future, we'd like for the app to have a nicer interface, ie the option to scroll between different features.
+
+
+![](ezgif.com-video-to-gif.gif)
