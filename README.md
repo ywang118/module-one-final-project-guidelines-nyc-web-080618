@@ -3,7 +3,7 @@ MEETUP APP :thumbsup:
 
 ## Objectives
 
-Description:erere
+Description:
 
 >"Are you feeling lonely in NYC?!?! It's a big city  and there are many things to do with many people! Our application connects you to people with similar interests!"
 
