@@ -1,16 +1,16 @@
-MEETUP APP :thumbsup:
-======================
+:two_women_holding_hands:MEETUP APP :two_men_holding_hands:
+=====================
 
-## Objectives
+<h3> Objectives </h3>
 
-Description:
+  Description:
 
 >"Are you feeling lonely in NYC?!?! It's a big city  and there are many things to do with many people! Our application connects you to people with similar interests!"
 
-Our application helps those who are 6interested in participating in meet-ups, either in the role of a user or an organizer. The application both retrieves data & allows certain fields to be edited.
+Our application helps those who are interested in participating in meet-ups, either in the role of a user or an organizer. The application both retrieves data & allows certain fields to be edited.
 
 
-  User Stories
+  `User Stories`
 
    1. As an organizer, I want to be able to change the time of an event.
 
